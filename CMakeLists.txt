@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
 
+if(NOT DEFINED ENV{TRAVIS_BUILD_NUMBER})
+    message(STATUS "TRAVIS_BUILD_NUMBER environment variable is not defined. Run 'export TRAVIS_BUILD_NUMBER=1'.")
+endif()
+
 project(ip_filter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 configure_file(src/version.h.in ${CMAKE_SOURCE_DIR}/src/version.hpp)
 
