@@ -64,8 +64,9 @@ TEST(IpAddressTest, FromStringIncorrectDataFormatError)
     ASSERT_THROW(ipv4::from_string("222.82.")           , std::runtime_error);
     ASSERT_THROW(ipv4::from_string("222.82.198")        , std::runtime_error);
     ASSERT_THROW(ipv4::from_string("222-82-198-168")    , std::runtime_error);
-    ASSERT_THROW(ipv4::from_string("222.82.198.")       , std::invalid_argument);
-//    ASSERT_THROW(ip::from_string("222.82.198.168.145"), std::runtime_error); TODO
+    ASSERT_THROW(ipv4::from_string("222.82.198.")       , std::runtime_error);
+    ASSERT_THROW(ipv4::from_string("tr.ol.lo.lo")       , std::runtime_error);
+//    ASSERT_THROW(ipv4::from_string("222.82.198.168.145"), std::runtime_error);
     
     ASSERT_NO_THROW(ipv4::from_string("222.82.198.168"));
 }

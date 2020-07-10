@@ -53,8 +53,11 @@ Address from_string(const std::string& ip_str)
         n3_i = stoi(ip_str.substr(pos2 + 1, pos3 - pos2));
         n4_i = stoi(ip_str.substr(pos3 + 1, std::string::npos));
     }
-    catch (const std::invalid_argument& ex) { throw ex; }
-    catch (const std::out_of_range&     ex) { throw ex; }
+    catch (const std::exception& ex)
+    {
+        std::string error_msg = "Incorrect data format: " + ip_str;
+        throw std::runtime_error(error_msg);
+    }
 
     
     // throw exception if values > 255
