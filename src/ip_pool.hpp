@@ -13,7 +13,7 @@ namespace ipv4
 class Pool
 {
 public:
-    void print(std::ostream& os, const IFilter& filter = ipv4::All()) const;
+    void print(std::ostream& os, const Filter& filter = ipv4::All()) const;
     void sort();
     void pushBack(const Address&);
 private:

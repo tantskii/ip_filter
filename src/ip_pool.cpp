@@ -2,7 +2,7 @@
 
 namespace ipv4 {
 //-----------------------------------------------------------------------------------------
-void Pool::print(std::ostream& os, const IFilter& filter) const
+void Pool::print(std::ostream& os, const Filter& filter) const
 {
     for (const Address& address : data_) {
         if (filter(address)) {
