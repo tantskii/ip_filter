@@ -11,7 +11,7 @@ namespace ipv4
 class IFilter
 {
 public:
-    virtual ~IFilter() {}
+    virtual ~IFilter() = default;
     virtual bool operator()(const Address&) const = 0;
 };
 
